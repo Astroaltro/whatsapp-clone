@@ -1,0 +1,289 @@
+/* Base Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* The Background wrapper (Desktop view) */
+.wa-wrapper {
+  background-color: #0b141a; /* Dark background for desktop */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+/* The Phone-sized container */
+.wa-container {
+  background-color: #0b141a;
+  width: 100%;
+  max-width: 480px; /* Limits width on Desktop to look like a phone */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-left: 1px solid #202c33;
+  border-right: 1px solid #202c33;
+}
+
+/* Header */
+.wa-header {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #0b141a;
+}
+
+.wa-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wa-logo {
+  font-size: 22px;
+  color: #8696a0;
+  font-weight: 500;
+}
+
+.wa-header-icons {
+  display: flex;
+  gap: 24px;
+  color: #e9edef;
+}
+
+/* Search Bar Fix */
+.wa-search-container {
+  position: relative;
+  width: 100%; /* Ensures it stays inside the header padding */
+}
+
+.wa-search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8696a0;
+}
+
+.wa-search-input {
+  width: 100%;
+  background-color: #202c33;
+  border: none;
+  border-radius: 24px;
+  padding: 10px 16px 10px 52px;
+  color: #e9edef;
+  font-size: 15px;
+  outline: none;
+}
+
+/* Chat List */
+.wa-chat-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.wa-chat-item {
+  display: flex;
+  padding: 12px 16px;
+  align-items: center;
+  transition: background 0.2s;
+}
+
+.wa-chat-item:active {
+  background-color: #202c33;
+}
+
+.wa-avatar {
+  width: 50px;
+  height: 50px;
+  background-color: #6a7175;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #cfd3d5;
+}
+
+.wa-chat-info {
+  flex: 1;
+  margin-left: 16px;
+  border-bottom: 0.5px solid #202c33;
+  padding-bottom: 12px;
+  min-width: 0; /* Important for ellipsis */
+}
+
+.wa-chat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wa-chat-name {
+  color: #e9edef;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.wa-chat-date {
+  font-size: 12px;
+  color: #8696a0;
+}
+
+.wa-chat-msg {
+  font-size: 14px;
+  color: #8696a0;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.media-icon {
+  margin-right: 4px;
+}
+
+/* Floating Action Button */
+.wa-fab {
+  position: absolute;
+  bottom: 100px;
+  right: 16px;
+  background-color: #00a884;
+  border: none;
+  border-radius: 16px;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0b141a;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  cursor: pointer;
+}
+
+/* Bottom Nav */
+.wa-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px 0 12px 0;
+  background-color: #0b141a;
+  border-top: 1px solid #202c33;
+}
+
+.wa-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: #8696a0;
+  flex: 1;
+}
+
+.wa-nav-item span {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.wa-nav-item.active {
+  color: #e9edef;
+}
+
+.nav-icon-wrapper {
+  background-color: #003b2f;
+  color: #d1f4e4;
+  padding: 4px 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+  .wa-container {
+    max-width: 100%;
+    border: none;
+  }
+}
+/* Auth Screen Specifics */
+.auth-page {
+  padding: 40px 24px;
+  justify-content: flex-start;
+}
+
+.auth-form {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auth-input {
+  padding: 14px 20px !important;
+}
+
+.auth-submit {
+  position: relative !important;
+  width: 100% !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  margin-top: 10px;
+  border-radius: 10px !important;
+  font-weight: bold;
+}
+
+.auth-toggle-text {
+  color: #8696a0;
+  text-align: center;
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.auth-submit:disabled {
+  background-color: #202c33;
+  color: #8696a0;
+}
+/* Better Clickable Elements */
+.wa-nav-item, .wa-fab, .wa-chat-item {
+  cursor: pointer;
+  user-select: none;
+}
+
+.wa-nav-item:active {
+  transform: scale(0.95);
+}
+
+.empty-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60%;
+  color: #8696a0;
+  text-align: center;
+  padding: 40px;
+}
+
+/* Ensure the Nav Icon wrapper only highlights when active */
+.wa-nav-item .nav-icon-wrapper {
+  background-color: transparent;
+  color: #8696a0;
+  transition: all 0.2s;
+}
+
+.wa-nav-item.active .nav-icon-wrapper {
+  background-color: #003b2f;
+  color: #d1f4e4;
+  padding: 4px 20px;
+  border-radius: 20px;
+}
+
+.wa-nav-item.active span {
+  color: #e9edef;
+  font-weight: bold;
+}
